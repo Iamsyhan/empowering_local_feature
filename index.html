@@ -11,6 +11,7 @@
             --jump-sky: #26C1F0; 
             --jump-navy: #1E3A8A; 
             --bg-light: #F4F7FA;
+            --ms-green: #107C10;
         }
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', 'Pretendard', sans-serif; margin: 0; color: var(--ms-dark); line-height: 1.7; word-break: keep-all; }
@@ -28,70 +29,46 @@
         .hero { background: linear-gradient(rgba(0, 120, 212, 0.95), rgba(30, 58, 138, 0.95)); color: white; padding: 130px 8% 100px; text-align: center; }
         .hero h1 { font-size: 3.2rem; margin-bottom: 20px; font-weight: 700; }
 
-        section { padding: 90px 8%; }
+        section { padding: 80px 8%; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { color: var(--ms-blue); font-size: 2.4rem; font-weight: 700; margin-bottom: 15px; }
 
-        /* Hour of AI x Empowering Local Futures 섹션 */
-        .campaign-container { 
-            display: flex; align-items: center; gap: 50px; background: white; 
-            padding: 60px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); margin-bottom: 60px;
-        }
-        .campaign-content-left { flex: 1.3; }
-        .campaign-visual-right { 
-            flex: 0.7; display: flex; flex-direction: column; align-items: center; 
-            text-align: center; border-left: 1px solid #eee; padding-left: 50px;
-        }
-        .campaign-visual-right img { height: 70px; margin-bottom: 20px; }
-        .campaign-tag { display: inline-block; background: #eef7ff; color: var(--ms-blue); padding: 4px 12px; font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; }
+        /* 교육 과정 테이블 스타일 */
+        .curriculum-card { background: white; border: 1px solid #ddd; padding: 40px; margin-bottom: 50px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .curriculum-card h3 { color: var(--ms-blue); border-left: 5px solid var(--ms-blue); padding-left: 15px; margin-bottom: 25px; }
+        
+        .table-wrapper { overflow-x: auto; }
+        .edu-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .edu-table th { background: #f8f9fa; color: #333; padding: 15px; border-top: 2px solid #333; border-bottom: 1px solid #ddd; font-weight: 700; text-align: center; }
+        .edu-table td { padding: 18px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        .edu-table .time-col { background: #fcfcfc; text-align: center; width: 100px; font-weight: 600; color: #666; }
+        .edu-table .title-col { font-weight: 700; color: var(--ms-blue); width: 180px; }
+        
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 0.8rem; font-weight: bold; margin-bottom: 8px; }
+        .tag-red { background: #ffebee; color: #c62828; }
+        .tag-blue { background: #e3f2fd; color: #1565c0; }
+        .tag-green { background: #e8f5e9; color: #2e7d32; }
 
-        /* 점프 소개 섹션 */
-        .jump-container { 
-            display: flex; align-items: center; gap: 50px; background: #fff; 
-            padding: 60px; border: 1px solid #eee; margin-top: 40px;
-        }
-        .jump-visual-left { 
-            flex: 0.7; display: flex; flex-direction: column; align-items: center; 
-            text-align: center; border-right: 1px solid #eee; padding-right: 50px;
-        }
+        /* 수료증 섹션 */
+        .cert-box { background: #fff; border: 2px dashed var(--ms-green); padding: 40px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 40px; }
+        .cert-badge { background: var(--ms-green); color: white; padding: 12px 20px; font-weight: bold; font-size: 1rem; }
+        .cert-text h3 { color: var(--ms-green); margin: 0 0 10px 0; }
+
+        .jump-container { display: flex; align-items: center; gap: 50px; background: #fff; padding: 60px; border: 1px solid #eee; }
+        .jump-visual-left { flex: 0.7; text-align: center; border-right: 1px solid #eee; padding-right: 50px; }
         .jump-visual-left img { height: 60px; margin-bottom: 20px; }
         .jump-content-right { flex: 1.3; }
 
-        /* 공통 사각형 버튼 스타일 */
-        .square-btn { 
-            display: inline-block; text-decoration: none; padding: 16px 35px; font-weight: 700; font-size: 1rem;
-            border-radius: 0; transition: 0.2s; cursor: pointer; border: none; text-transform: uppercase;
-        }
-        .btn-ms { background-color: var(--ms-blue); color: white; }
-        .btn-ms:hover { background-color: #005A9E; }
-        .btn-jump { background-color: var(--jump-sky); color: white; }
-        .btn-jump:hover { background-color: var(--jump-navy); }
-
-        /* 교육 콘텐츠 테이블 (일반적 콘텐츠 중심) */
-        .curriculum-box { background: white; border: 1px solid #eee; overflow: hidden; }
-        .curriculum-table { width: 100%; border-collapse: collapse; }
-        .curriculum-table th { background: #333; color: white; padding: 22px; text-align: left; }
-        .curriculum-table td { padding: 22px; border-bottom: 1px solid #eee; }
-        .level-tag { display: inline-block; padding: 5px 15px; font-size: 0.85rem; font-weight: 700; color: #fff; }
-
-        /* 문의 폼 */
         .form-container { max-width: 900px; margin: 0 auto; background: #fff; padding: 60px; border: 1px solid #ddd; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .form-group.full { grid-column: span 2; }
         .form-group label { display: block; margin-bottom: 8px; font-weight: 700; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #8A8A8A; border-radius: 0; box-sizing: border-box; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #8A8A8A; box-sizing: border-box; }
 
-        #backToTop {
-            position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px; 
-            background-color: var(--ms-dark); color: white; border: none; cursor: pointer; display: none; z-index: 1001;
-        }
-
+        #backToTop { position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px; background-color: var(--ms-dark); color: white; border: none; cursor: pointer; display: none; z-index: 1001; }
         footer { background: #1a1a1a; color: #999; padding: 40px 8%; text-align: center; }
 
-        @media (max-width: 900px) {
-            .campaign-container, .jump-container { flex-direction: column; padding: 30px; }
-            .campaign-visual-right, .jump-visual-left { border: none; padding: 0; margin-bottom: 30px; }
-        }
+        @media (max-width: 900px) { .jump-container, .cert-box { flex-direction: column; padding: 30px; } .jump-visual-left { border: none; padding: 0; margin-bottom: 30px; } }
     </style>
 </head>
 <body id="home">
@@ -104,8 +81,7 @@
     </div>
     <nav>
         <a href="#home">홈</a>
-        <a href="#campaign">Hour of AI</a>
-        <a href="#intro">교육 콘텐츠</a>
+        <a href="#intro">교육 프로그램</a>
         <a href="#jump">점프 소개</a>
         <a href="#contact" class="btn-query">교육 문의하기</a>
     </nav>
@@ -113,81 +89,76 @@
 
 <div class="hero">
     <h1>학교로 찾아가는 AI 교육</h1>
-    <p>Hour of AI x Empowering Local Futures: 지리적 한계를 넘어 공평한 미래 교육을 전합니다.</p>
+    <p>Hour of AI x Empowering Local Futures: 결과보고서 기반 실무 교육 안내</p>
 </div>
-
-<section id="campaign">
-    <div class="section-title">
-        <span class="campaign-tag">Local Impact</span>
-        <h2>Hour of AI x Empowering Local Futures</h2>
-    </div>
-    <div class="campaign-container">
-        <div class="campaign-content-left">
-            <p><b>Hour of AI</b>는 지리적 제약으로 교육 소외가 발생하기 쉬운 폐광지역 및 도서산간 지역 청소년들을 위해 마이크로소프트와 점프가 함께 기획한 맞춤형 AI 교육 캠페인입니다.</p>
-            <p>단순한 지식 전달을 넘어, <b>'학교로 찾아가는 교육 모델'</b>을 통해 이동의 한계 없이 모든 학생들에게 최신 디지털 기술과 인공지능 기초 소양을 강화할 수 있는 기회를 제공합니다.</p>
-            <p>우리는 청소년들이 기술에 대한 두려움을 없애고, 자신의 미래를 스스로 설계할 수 있는 <b>디지털 이해 역량(Digital Literacy)</b>을 갖추도록 지원합니다.</p>
-        </div>
-        <div class="campaign-visual-right">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft Logo">
-            <p style="font-weight: 700; color: var(--ms-blue); margin-bottom: 25px;">Inclusive Digital Future</p>
-            <a href="https://news.microsoft.com/ko-kr/" target="_blank" class="square-btn btn-ms">사회공헌 소식 보기 →</a>
-        </div>
-    </div>
-</section>
 
 <section id="intro" style="background-color: var(--bg-light);">
     <div class="section-title">
-        <h2>단계별 AI 교육 콘텐츠</h2>
-        <p>현장의 요구와 학생의 수준에 맞춘 체계적인 프로그램</p>
+        <h2>상세 교육 커리큘럼 예시</h2>
+        <p>결과보고서 6~8페이지의 추진 내용을 바탕으로 구성된 표준 시간표입니다.</p>
     </div>
-    <div class="curriculum-box">
-        <table class="curriculum-table">
-            <thead>
-                <tr>
-                    <th>단계</th>
-                    <th>핵심 역량</th>
-                    <th>상세 교육 콘텐츠</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><span class="level-tag" style="background: #00A4EF;">입문</span></td>
-                    <td><b>AI 리터러시</b></td>
-                    <td>인공지능의 개념 및 작동 원리 이해, 생성형 AI의 기초 지식 및 윤리적 활용법</td>
-                </tr>
-                <tr>
-                    <td><span class="level-tag" style="background: #7FBA00;">기초</span></td>
-                    <td><b>디지털 소양</b></td>
-                    <td>일상 속 인공지능 사례 탐구 및 실습을 통한 생산성 도구 활용 능력 배양</td>
-                </tr>
-                <tr>
-                    <td><span class="level-tag" style="background: #FFB900;">심화</span></td>
-                    <td><b>창의적 문제 해결</b></td>
-                    <td>프로젝트 기반 학습(PBL)을 통한 AI 서비스 기획 및 실질적인 문제 해결 시나리오 설계</td>
-                </tr>
-                <tr>
-                    <td><span class="level-tag" style="background: #F25022;">특강</span></td>
-                    <td><b>미래 진로 설계</b></td>
-                    <td>IT 전문가 멘토링을 통한 산업 현장의 변화 탐색 및 디지털 시대의 커리어 방향성 제시</td>
-                </tr>
-            </tbody>
-        </table>
+    
+    <div class="curriculum-card">
+        <h3>[예시] 1일 집중 AI 캠프 프로그램 (4~6교시 기준)</h3>
+        <div class="table-wrapper">
+            <table class="edu-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>교시/시간</th>
+                        <th>주요 교육 내용</th>
+                        <th>학습 목표 및 활동</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="time-col">도입</td>
+                        <td class="time-col">1교시</td>
+                        <td class="title-col"><span class="tag tag-red">AI 리터러시</span><br>AI와 첫 인사하기</td>
+                        <td>인공지능의 기본 개념 이해 및 생성형 AI 사용 규칙(윤리) 학습</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col" rowspan="2">전개</td>
+                        <td class="time-col">2~3교시</td>
+                        <td class="title-col"><span class="tag tag-blue">체험 활동</span><br>AI 활용 창작 실습</td>
+                        <td>Microsoft AI 도구를 활용한 이미지/텍스트 생성 체험 및 나만의 작품 만들기</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">4교시</td>
+                        <td class="title-col"><span class="tag tag-green">전문가 멘토링</span><br>진로 특강</td>
+                        <td>마이크로소프트 임직원이 직접 들려주는 IT 기업 이야기 및 미래 직업 탐색</td>
+                    </tr>
+                    <tr>
+                        <td class="time-col">심화</td>
+                        <td class="time-col">5~6교시</td>
+                        <td class="title-col"><span class="tag tag-blue">PBL 프로젝트</span><br>AI 상상력 캠프</td>
+                        <td>우리 동네/학교의 문제를 발견하고 AI를 통해 해결하는 아이디어 해커톤</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cert-box">
+            <div class="cert-badge">Official Certificate</div>
+            <div class="cert-text">
+                <h3>Microsoft 명의 수료증 발급</h3>
+                <p>본 프로그램을 이수한 모든 학생에게는 <b>Microsoft 본사 명의의 수료증</b>이 수여됩니다.</p>
+            </div>
+        </div>
     </div>
 </section>
 
 <section id="jump">
-    <div class="section-title">
-        <h2>Partner: JUMP</h2>
-    </div>
+    <div class="section-title"><h2>Partner: JUMP</h2></div>
     <div class="jump-container">
         <div class="jump-visual-left">
             <img src="로고_점프.png" alt="사단법인 점프 로고">
-            <p style="font-weight: 700; color: var(--jump-sky); margin-bottom: 25px;">Non-profit Social Venture</p>
-            <a href="https://jumpsp.org" target="_blank" class="square-btn btn-jump">점프 홈페이지 바로가기 →</a>
+            <p style="font-weight: 700; color: var(--jump-sky);">Non-profit Social Venture</p>
+            <a href="https://jumpsp.org" target="_blank" class="square-btn btn-jump" style="text-decoration:none; margin-top:10px;">홈페이지 바로가기 →</a>
         </div>
         <div class="jump-content-right">
-            <p><b>사단법인 점프</b>는 '누구나 배경에 상관없이 배움의 기회를 누리고 성장하는 사회'를 만드는 <b>비영리 교육 소셜벤처</b>입니다.</p>
-            <p>Hour of AI 캠페인을 통해 강원도 폐광지역 등에서 총 <b>2,136명의 학생</b>과 <b>104개 학급</b>에 직접 찾아가는 교육을 운영하였으며, 참여 교사 만족도 <b>92.3%</b>라는 압도적인 성과를 기록한 현장 전문성을 보유하고 있습니다.</p>
+            <p>사단법인 점프는 교육 격차 해소를 위해 활동하는 비영리 소셜벤처입니다.</p>
+            <p>본 캠페인을 통해 <b>2,136명의 학생</b>과 <b>104개 학급</b>에 직접 찾아가는 교육을 운영하였으며, 참여 교사로부터 <b>92.3%의 '매우 만족'</b> 평가를 받았습니다.</p>
         </div>
     </div>
 </section>
@@ -201,10 +172,10 @@
                 <div class="form-group"><label>담당자 성함</label><input type="text" placeholder="성함 입력"></div>
                 <div class="form-group"><label>연락처</label><input type="text" placeholder="010-0000-0000"></div>
                 <div class="form-group"><label>이메일</label><input type="email" placeholder="email@address.com"></div>
-                <div class="form-group full"><label>희망 교육 대상</label><input type="text" placeholder="예: 초등 5~6학년, 중학교 전학년 등"></div>
+                <div class="form-group full"><label>희망 교육 대상</label><input type="text" placeholder="예: 초등 5~6학년 등"></div>
                 <div class="form-group full"><label>희망 교육 사항</label><textarea rows="4" placeholder="문의 내용을 작성해 주세요."></textarea></div>
             </div>
-            <button type="button" class="submit-btn btn-ms" style="width: 100%; padding: 20px; font-size: 1.2rem; margin-top: 30px; cursor: pointer; border: none; color: white; font-weight: bold;">문의 제출하기</button>
+            <button type="button" class="btn-ms" style="width: 100%; padding: 20px; font-size: 1.1rem; margin-top: 20px; cursor: pointer; border: none; color: white; font-weight: bold;">문의 제출하기</button>
         </form>
     </div>
 </section>
