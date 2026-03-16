@@ -15,14 +15,17 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', 'Pretendard', sans-serif; margin: 0; color: var(--ms-dark); line-height: 1.7; word-break: keep-all; }
         
-        /* 로고가 커짐에 따라 헤더 높이 조정 */
-        header { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
+        /* 헤더 높이는 큰 MS 로고에 맞추되 여백 최적화 */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logos { display: flex; align-items: center; gap: 25px; }
         
-        /* MS 로고 및 점프 로고 크기: 세로 3cm(약 114px) 기준 적용 */
+        /* 마이크로소프트 로고: 세로 3cm(114px) 유지 */
         .logos .ms-logo { height: 114px; width: auto; object-fit: contain; }
-        .logos .jump-logo { height: 114px; width: auto; object-fit: contain; } 
-        .logos span { color: #eee; font-size: 3rem; font-weight: 100; } /* 구분선 크기도 조절 */
+        
+        /* 점프 로고: 다시 작게 조정 (기존 규격인 약 32~35px 사이) */
+        .logos .jump-logo { height: 35px; width: auto; object-fit: contain; } 
+        
+        .logos span { color: #eee; font-size: 3rem; font-weight: 100; }
         
         nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; font-size: 1.1rem; }
         .btn-query-nav { background: var(--ms-blue); color: white !important; padding: 12px 28px; font-weight: bold; border-radius: 4px; }
@@ -34,7 +37,7 @@
         .section-title { text-align: center; margin-bottom: 70px; }
         .section-title h2 { color: var(--ms-blue); font-size: 2.8rem; font-weight: 700; }
 
-        /* 캠페인 메인 브랜딩 로고 사이즈 극대화 */
+        /* 본문 중앙 브랜딩: MS 로고 강조 유지 */
         .campaign-intro { text-align: center; margin-bottom: 100px; }
         .ms-logo-main-display { height: 130px; width: auto; margin-bottom: 35px; } 
         .campaign-intro h3 { font-size: 3rem; color: var(--ms-blue); font-weight: 800; margin: 0; }
@@ -55,7 +58,7 @@
         .edu-table li { margin-bottom: 10px; }
         .tag { padding: 5px 12px; font-size: 0.9rem; font-weight: bold; background: #eef7ff; color: var(--ms-blue); border-radius: 4px; }
 
-        /* 수료증 섹션 MS 로고 극대화 */
+        /* 수료증 섹션 MS 로고 강조 유지 */
         .cert-display { display: flex; align-items: center; justify-content: center; gap: 35px; padding: 80px 0; border-top: 1px solid #eee; margin-top: 40px; }
         .cert-ms-logo { height: 114px; width: auto; } 
         .cert-text h3 { margin: 0; font-size: 2rem; color: var(--ms-green); }
@@ -82,9 +85,10 @@
         }
 
         footer { background: #1a1a1a; color: #999; padding: 50px 8%; text-align: center; font-size: 1rem; }
+        
         @media (max-width: 1024px) { 
-            header { flex-direction: column; gap: 20px; }
-            .logos .ms-logo, .logos .jump-logo { height: 80px; }
+            .logos .ms-logo { height: 80px; }
+            .logos .jump-logo { height: 30px; }
             .intro-grid, .process-container { grid-template-columns: 1fr; flex-direction: column; } 
             .cert-display { flex-direction: column; text-align: center; }
         }
