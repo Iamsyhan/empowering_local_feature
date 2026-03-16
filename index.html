@@ -17,8 +17,11 @@
         
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
         .logos { display: flex; align-items: center; gap: 25px; }
+        
+        /* MS 로고: 세로 3cm (약 114px) */
         .logos .ms-logo { height: 114px; width: auto; object-fit: contain; }
-        .logos .jump-logo { height: 38px; width: auto; object-fit: contain; } /* 세로 1cm 규격 유지 */
+        /* 점프 로고: 세로 1cm (약 38px) */
+        .logos .jump-logo { height: 38px; width: auto; object-fit: contain; } 
         .logos span { color: #eee; font-size: 3.5rem; font-weight: 100; }
         
         nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 600; font-size: 1.1rem; }
@@ -28,7 +31,10 @@
         .section-title { text-align: center; margin-bottom: 70px; }
         .section-title h2 { color: var(--ms-blue); font-size: 2.8rem; font-weight: 700; }
 
-        /* [핵심 추가] 점프 기관 소개 전용 섹션 스타일 */
+        .campaign-intro { text-align: center; margin-bottom: 100px; padding-top: 50px; }
+        .ms-logo-main-display { height: 130px; width: auto; margin-bottom: 35px; } 
+
+        /* 점프 기관 소개 섹션 */
         .jump-profile-section { background-color: #fff; padding: 120px 8%; border-bottom: 1px solid #f0f0f0; }
         .jump-profile-container { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 80px; align-items: center; }
         
@@ -37,21 +43,35 @@
         .jump-identity h4 { font-size: 1.8rem; color: #333; margin: 0; font-weight: 800; }
         .jump-identity p { color: var(--jump-sky); font-weight: 700; font-size: 1.1rem; margin-top: 10px; }
 
+        /* 점프 홈페이지 버튼 */
+        .btn-jump-home { 
+            display: inline-block; 
+            margin-top: 25px; 
+            padding: 12px 25px; 
+            border: 2px solid var(--jump-sky); 
+            color: var(--jump-sky); 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            transition: all 0.3s; 
+        }
+        .btn-jump-home:hover { background: var(--jump-sky); color: #fff; }
+
         .jump-mission-list { list-style: none; padding: 0; }
         .jump-mission-list li { margin-bottom: 35px; position: relative; padding-left: 30px; }
         .jump-mission-list li::before { content: "•"; color: var(--jump-sky); font-size: 2rem; position: absolute; left: 0; top: -5px; }
         .jump-mission-list b { font-size: 1.4rem; color: #222; display: block; margin-bottom: 8px; }
         .jump-mission-list span { font-size: 1.15rem; color: #666; display: block; line-height: 1.6; }
 
-        /* 기존 스타일 유지 */
-        .campaign-intro { text-align: center; margin-bottom: 100px; padding-top: 50px; }
-        .ms-logo-main-display { height: 130px; width: auto; margin-bottom: 35px; } 
         .contact-action-area { text-align: center; padding: 120px 8%; background: #fff; }
         .btn-direct-query { display: inline-block; background: var(--ms-blue); color: white; text-decoration: none; font-size: 1.8rem; font-weight: 700; padding: 25px 80px; border-radius: 60px; box-shadow: 0 15px 35px rgba(0, 120, 212, 0.3); transition: all 0.3s ease; }
+        
         footer { background: #1a1a1a; color: #999; padding: 50px 8%; text-align: center; font-size: 1rem; }
         
         @media (max-width: 1024px) { 
             .jump-profile-container { grid-template-columns: 1fr; gap: 40px; }
+            header { flex-direction: column; }
+            .logos .ms-logo { height: 80px; }
         }
     </style>
 </head>
@@ -64,9 +84,7 @@
         <img src="로고_점프.png" alt="사단법인 점프" class="jump-logo">
     </div>
     <nav>
-        <a href="#campaign">캠페인 비전</a>
         <a href="#about-jump">사단법인 점프 소개</a>
-        <a href="#curriculum">교육 커리큘럼</a>
         <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=iEfFynd1v0-_BkhvAwfSlwhrDQ7fuJxOlmaJIu4ZgPlURTJZTk82Q0lBVzc4VFpSQlczNEhWQlM5Qy4u" target="_blank" class="btn-query-nav">교육 문의</a>
     </nav>
 </header>
@@ -75,7 +93,7 @@
     <div class="campaign-intro">
         <img src="Microsoft-logo_rgb_c-gray.png" alt="MS Logo" class="ms-logo-main-display">
         <h3>Hour of AI x Empowering Local Futures</h3>
-        <p style="font-size: 1.3rem; color: #666; max-width: 800px; margin: 20px auto;">누구나 AI 시대를 준비할 수 있도록, 마이크로소프트와 점프가 전국 학교로 찾아갑니다.</p>
+        <p style="font-size: 1.3rem; color: #666; max-width: 800px; margin: 20px auto;">마이크로소프트와 점프가 함께 만드는 소외 없는 미래 교육</p>
     </div>
 </section>
 
@@ -88,6 +106,7 @@
             <img src="로고_점프.png" alt="JUMP Logo">
             <h4>사단법인 점프</h4>
             <p>Education for All, Opportunities for All</p>
+            <a href="https://jumpsp.org/" target="_blank" class="btn-jump-home">점프 홈페이지 방문하기</a>
         </div>
         <div class="jump-info-content">
             <ul class="jump-mission-list">
@@ -97,25 +116,14 @@
                 </li>
                 <li>
                     <b>성장의 선순환 '다자간 멘토링'</b>
-                    <span>대학생 멘토(퍼실리테이터)가 청소년을 가르치고, 사회인 전문가가 대학생을 멘토링하는 점프만의 독창적인 모델로 지속 가능한 교육 생태계를 만듭니다.</span>
+                    <span>대학생 멘토가 청소년을 가르치고, 사회인 전문가가 대학생을 멘토링하는 모델로 지속 가능한 교육 생태계를 구축합니다.</span>
                 </li>
                 <li>
                     <b>전문화된 교육 운영 역량</b>
-                    <span>전국 단위의 대규모 교육 공헌 프로그램을 기획/운영하는 전문 기관으로서, 이번 마이크로소프트 캠페인을 통해 양질의 AI 리터러시 교육을 학교 현장에 전달합니다.</span>
+                    <span>전국 단위 교육 공헌 프로그램을 기획/운영하는 전문 기관으로서, 마이크로소프트와 함께 양질의 AI 교육을 학교 현장에 전달합니다.</span>
                 </li>
             </ul>
         </div>
-    </div>
-</section>
-
-<section id="curriculum" style="background-color: var(--bg-light);">
-    <div class="section-title"><h2>상세 교육 커리큘럼</h2></div>
-    <div class="curriculum-label">초등/중·고등 공통</div>
-    <div style="background: #fff; padding: 40px; border-radius: 15px; border: 1px solid #ddd;">
-        <p style="font-size: 1.2rem; line-height: 1.8;">
-            본 프로그램은 <b>Microsoft 임직원 전문가 멘토링</b>과 <b>점프의 대학생 퍼실리테이터</b>가 협력하여 진행됩니다. 
-            단순한 기술 교육을 넘어 AI 윤리, 미래 진로 탐색, 실습형 코딩 체험을 아우르는 올인원(All-in-one) 캠프 형식으로 운영됩니다.
-        </p>
     </div>
 </section>
 
