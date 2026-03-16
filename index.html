@@ -16,12 +16,12 @@
         body { font-family: 'Segoe UI', 'Pretendard', sans-serif; margin: 0; color: var(--ms-dark); line-height: 1.7; word-break: keep-all; }
         
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
-        .logos { display: flex; align-items: center; gap: 15px; }
+        .logos { display: flex; align-items: center; gap: 18px; }
         
-        /* 로고 크기 조정: 점프 로고 높이(32px)에 맞춰 MS 로고 크기 확대 */
-        .logos .ms-logo { height: 32px; width: auto; }
-        .logos .jump-logo { height: 32px; width: auto; } 
-        .logos span { color: #ccc; font-size: 1.2rem; }
+        /* MS 로고 크기: 세로 1cm(약 38px) 기준 정밀 조정 */
+        .logos .ms-logo { height: 38px; width: auto; object-fit: contain; }
+        .logos .jump-logo { height: 38px; width: auto; object-fit: contain; } 
+        .logos span { color: #ddd; font-size: 1.5rem; font-weight: 300; }
         
         nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 600; font-size: 0.95rem; }
         .btn-query-nav { background: var(--ms-blue); color: white !important; padding: 10px 22px; font-weight: bold; border-radius: 4px; }
@@ -33,9 +33,9 @@
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { color: var(--ms-blue); font-size: 2.4rem; font-weight: 700; }
 
+        /* 본문 브랜딩 섹션 */
         .campaign-intro { text-align: center; margin-bottom: 80px; }
-        /* 본문의 MS 로고도 점프 로고 비율을 고려하여 적절히 확대 */
-        .ms-logo-main-display { height: 48px; width: auto; margin-bottom: 20px; }
+        .ms-logo-main-display { height: 50px; width: auto; margin-bottom: 25px; } /* 본문은 가독성을 위해 살짝 더 키움 */
         .campaign-intro h3 { font-size: 2.5rem; color: var(--ms-blue); font-weight: 800; margin: 0; }
         
         .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: left; margin-top: 50px; }
@@ -45,21 +45,23 @@
         .process-step { flex: 1; padding: 30px; border: 1px solid #ddd; text-align: center; position: relative; background: #fff; }
         .step-num { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--ms-blue); color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
+        /* 커리큘럼 표 스타일 */
         .curriculum-label { display: inline-block; background: var(--ms-dark); color: white; padding: 8px 20px; font-weight: bold; margin-bottom: 15px; border-radius: 2px; }
         .table-wrapper { overflow-x: auto; background: #fff; border: 1px solid #ddd; margin-bottom: 50px; border-radius: 8px; }
         .edu-table { width: 100%; border-collapse: collapse; }
         .edu-table th { background: #f8f9fa; padding: 18px; text-align: left; border-bottom: 2px solid #ddd; color: #333; }
         .edu-table td { padding: 18px; border-bottom: 1px solid #eee; vertical-align: top; }
         .edu-table ul { margin: 0; padding-left: 20px; }
-        .edu-table li { margin-bottom: 5px; }
+        .edu-table li { margin-bottom: 8px; }
         .tag { padding: 4px 10px; font-size: 0.85rem; font-weight: bold; background: #eef7ff; color: var(--ms-blue); border-radius: 3px; }
 
+        /* 수료증 섹션 */
         .cert-display { display: flex; align-items: center; justify-content: center; gap: 20px; padding: 60px 0; border-top: 1px solid #eee; margin-top: 20px; }
-        /* 수료증 쪽 MS 로고도 밸런스 조정 */
-        .cert-ms-logo { height: 38px; width: auto; }
+        .cert-ms-logo { height: 38px; width: auto; } /* 요청하신 세로 1cm 규격 적용 */
         .cert-text h3 { margin: 0; font-size: 1.6rem; color: var(--ms-green); }
         .cert-text p { margin: 5px 0 0; font-size: 1.1rem; color: #555; }
 
+        /* 문의 버튼 디자인 */
         .contact-action-area { text-align: center; padding: 100px 8%; background: #fff; }
         .contact-action-area p { font-size: 1.2rem; color: #666; margin-bottom: 40px; }
         .btn-direct-query { 
@@ -185,7 +187,7 @@
 <section id="contact">
     <div class="contact-action-area">
         <p>우리 학교 맞춤형 AI 교육 프로그램을 지금 상담해 보세요.</p>
-        <a href="여러분의_MS_Forms_링크" target="_blank" class="btn-direct-query">교육 문의하기</a>
+        <a href="여기에_MS_Forms_링크_입력" target="_blank" class="btn-direct-query">교육 문의하기</a>
     </div>
 </section>
 
